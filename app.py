@@ -30,7 +30,9 @@ user_input = st.text_input("質問を入力してください：")
 
 # LLM呼び出し関数
 def get_expert_answer(user_input: str, expert_type: str) -> str:
-	from langchain.chat_models import ChatOpenAI
+	from langchain_openai import ChatOpenAI
+	from langchain.prompts import ChatPromptTemplate
+	from langchain.chains import LLMChain
 	from langchain.schema import SystemMessage, HumanMessage
 	import os
 
